@@ -1,8 +1,16 @@
+version: "3.8"
+
 services:
   chatbot:
     build: .
     ports:
-      - "8001:8000"  # Changed from 8000:8000
-    volumes:
-      - ./app:/app
+      - "3001:3001"
+    environment:
+      - NODE_ENV=production
+      - PORT=3001
     restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3001/api/chat"]
+      interval: 30s
+      timeout: 10s
+      retries: 3

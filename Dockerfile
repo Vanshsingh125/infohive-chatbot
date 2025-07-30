@@ -1,13 +1,55 @@
-FROM python:3.9-slim
+# Multi-stage build for React + Node.js application
+FROM node:18-alpine AS builder
 
+# Set working directory
 WORKDIR /app
 
-COPY app/requirements.txt .
+# Copy package files
+COPY client/package*.json ./client/
+COPY server/package*.json ./server/
 
-RUN pip install --no-cache-dir -r requirements.txt
+# Install dependencies
+RUN cd client && npm ci --only=production
+RUN cd server && npm ci --only=production
 
-COPY app .
+# Copy source code
+COPY client/ ./client/
+COPY server/ ./server/
 
-EXPOSE 8000
+# Build React app
+RUN cd client && npm run build
 
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+# Production stage
+FROM node:18-alpine AS production
+
+# Create app directory
+WORKDIR /app
+
+# Copy package files
+COPY server/package*.json ./
+
+# Install only production dependencies
+RUN npm ci --only=production
+
+# Copy built React app and server files
+COPY --from=builder /app/client/build ./client/build
+COPY --from=builder /app/server/index.js ./
+COPY --from=builder /app/server/responses.json ./
+
+# Create non-root user
+RUN addgroup -g 1001 -S nodejs
+RUN adduser -S nodejs -u 1001
+
+# Change ownership of the app directory
+RUN chown -R nodejs:nodejs /app
+USER nodejs
+
+# Expose port
+EXPOSE 3001
+
+# Set environment variables
+ENV NODE_ENV=production
+ENV PORT=3001
+
+# Start the application
+CMD ["npm", "start"]
