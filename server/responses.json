@@ -1,0 +1,848 @@
+{
+    "intents": [
+            {
+                    "tag": "greeting",
+                    "patterns": [
+                            "Hi",
+                            "hi",
+                            "Hey",
+                            "How are you",
+                            "Is anyone there?",
+                            "Hello",
+                            "Good day"
+                    ],
+                    "responses": [
+                            "Hey there",
+                            "Good to see you here, how can I help you?",
+                            "Hello, welcome to the chat",
+                            "Hi there, what can I do for you?",
+                            "Hi there, how can I help?"
+                    ]
+            },
+            {
+                    "tag": "goodbye",
+                    "patterns": [
+                            "Bye",
+                            "See you later",
+                            "Goodbye"
+                    ],
+                    "responses": [
+                            "See you later, thanks for visiting",
+                            "Have a nice day",
+                            "Bye! Come back again soon."
+                    ]
+            },
+            {
+                    "tag": "thanks",
+                    "patterns": [
+                            "Thanks",
+                            "Thank you",
+                            "That's helpful",
+                            "Thank's a lot!"
+                    ],
+                    "responses": [
+                            "Happy to help!",
+                            "Any time!",
+                            "My pleasure"
+                    ]
+            },
+            {
+                    "tag": "about",
+                    "patterns": [
+                            "Tell me about the college?",
+                            "What do you know about the college?",
+                            "What is the name of the college?",
+                            "What do you know about the gndec?",
+                            "about college",
+                            "about",
+                            "college",
+                            "about clg",
+                            "how is college",
+                            "college information",
+                            "college info",
+                            "clg info",
+                            "clg inform"
+                    ],
+                    "responses": [
+                            "Guru Nanak Dev Engineering College (GNDEC) is one of the oldest and most prestigious engineering institutions in Ludhiana, Punjab. Established in 1956, it offers a variety of undergraduate and postgraduate programs and is affiliated with I.K. Gujral Punjab Technical University (IKG PTU). GNDEC is known for its excellent infrastructure, industry partnerships, and top-tier placement opportunities."
+                    ]
+            },
+            {
+                    "tag": "admission",
+                    "patterns": [
+                            "What is the admission portal of GNDEC?",
+                            "admission portal",
+                            "admission"
+                    ],
+                    "responses": [
+                            "The Admission portal of GNDEC can be accessed at <a href='https://admission.gndec.ac.in/' target='_blank'>GNDEC ADMISSION Portal</a>. You can find student login and fee payment options there."
+                    ]
+            },
+            {
+                    "tag": "address",
+                    "patterns": [
+                            "address of college",
+                            "college address",
+                            "clg address",
+                            "college location",
+                            "location",
+                            "locations of college",
+                            "Where is the college located?",
+                            "Give me the address",
+                            "Can you tell me the location of GNE?",
+                            "What is the address of your college?",
+                            "How can I reach the college?",
+                            "GNE address please"
+                    ],
+                    "responses": [
+                            "Guru Nanak Dev Engineering College (GNDEC) is located at **Gill Park, Gill Road, Ludhiana, Punjab – 141006, India. It is well-connected to the city and provides a conducive environment for technical education and research."
+                    ]
+            },
+            {
+                    "tag": "name",
+                    "patterns": [
+                            "name",
+                            "your name",
+                            "do you have a name",
+                            "what are you called",
+                            "what is your name",
+                            "what should I call you",
+                            "whats your name?",
+                            "what are you",
+                            "who are you",
+                            "who is this",
+                            "what am i chatting to",
+                            "who am i taking to",
+                            "what are you"
+                    ],
+                    "responses": [
+                            "You can call me InfoHive.",
+                            "I'm InfoHive",
+                            "I'm InfoHive GNDEC Chatbot."
+                    ]
+            },
+            {
+                    "tag": "hours",
+                    "patterns": [
+                            "timing of college",
+                            "what is college timing",
+                            "working days",
+                            "when are you guys open",
+                            "what are your hours",
+                            "hours of operation",
+                            "when is the college open",
+                            "college timing",
+                            "what about college timing",
+                            "is college open on saturday",
+                            "tell something about college timing",
+                            "what is the college  hours",
+                            "when should i come to college",
+                            "when should i attend college",
+                            "what is my college time",
+                            "college timing",
+                            "timing college"
+                    ],
+                    "responses": [
+                            "College is open from 09:00AM to 04:00PM Monday-Friday!\n The visiting hours for Guru Nanak Dev Engineering College (GNDEC) are typically 9:00 AM to 5:00 PM, Monday to Friday. However, for specific departments or administrative offices, it’s best to confirm in advance."
+                    ]
+            },
+            {
+                    "tag": "number",
+                    "patterns": [
+                            "more info",
+                            "contact info",
+                            "how to contact college",
+                            "college telephone number",
+                            "college number",
+                            "What is your contact no",
+                            "Contact number?",
+                            "how to call you",
+                            "College phone no?",
+                            "how can i contact you",
+                            "Can i get your phone number",
+                            "how can i call you",
+                            "phone number",
+                            "phone no",
+                            "call",
+                            "contact",
+                            "contact number",
+                            "number",
+                            "college number",
+                            "phone number",
+                            "college phone number",
+                            "how to contact",
+                            "contact college",
+                            "contact clg",
+                            "number"
+                    ],
+                    "responses": [
+                            "You can contact Guru Nanak Dev Engineering College (GNDEC) through the following:\n\n📞 Phone: +91-161-2502700, +91-161-2502701\n📧 Email: principal@gndec.ac.in\n🌐 Website: [www.gndec.ac.in](http://www.gndec.ac.in)"
+                    ],
+                    "context_set": ""
+            },
+            {
+                    "tag": "course",
+                    "patterns": [
+                            "list of courses",
+                            "list of courses offered",
+                            "list of courses offered in GNDEC",
+                            "what are the courses offered in your college?",
+                            "courses?",
+                            "courses offered",
+                            "courses offered in GNDEC",
+                            "courses you offer",
+                            "branches?",
+                            "courses available at GNDEC?",
+                            "branches available at GNDEC?",
+                            "what are the courses in GNDEC?",
+                            "what are branches in GNDEC?",
+                            "what are courses in GNDEC?",
+                            "branches available in GNDEC?",
+                            "can you tell me the courses available in GNDEC?",
+                            "can you tell me the branches available in GNDEC?"
+                    ],
+                    "responses": [
+                            "Guru Nanak Dev Engineering College (GNDEC), Ludhiana offers the following courses: Undergraduate Programs (B.Tech): Computer Science and Engineering (CSE), Information Technology (IT), Electronics and Communication Engineering (ECE), Electrical Engineering (EE), Mechanical Engineering (ME), Civil Engineering (CE), Automobile Engineering (AE), Instrumentation and Control Engineering (ICE), Bio-Medical Engineering (BME). Postgraduate Programs (M.Tech): M.Tech in Computer Science and Engineering, M.Tech in VLSI Design and Embedded Systems, M.Tech in Structural Engineering, M.Tech in Power Systems, M.Tech in Thermal Engineering, M.Tech in Electronics and Communication Engineering, M.Tech in Power Electronics. Master of Business Administration (MBA): MBA in General Management, Marketing, and Finance. Doctoral Programs (Ph.D.): Ph.D. in Engineering and Management. For more information, visit the <a href='https://www.gndec.ac.in' target='_blank'>GNDEC Admission Portal</a>."
+                    ],
+                    "context_set": "user_asked_about_courses"
+            },
+            {
+                    "tag": "fees",
+                    "patterns": [
+                            "information about fee",
+                            "information on fee",
+                            "tell me the fee",
+                            "college fee",
+                            "fee per semester",
+                            "what is the fee of each semester",
+                            "what is the fees of each year",
+                            "what is fee",
+                            "what is the fees",
+                            "how much is the fees",
+                            "fees for first year",
+                            "fees",
+                            "about the fees",
+                            "tell me something about the fees"
+                    ],
+                    "responses": [
+                            "For detailed information about the fee structure at Guru Nanak Dev Engineering College (GNDEC), Ludhiana, please visit the <a href='https://admission.gndec.ac.in/Fee_Structure.php' target='_blank'>Fee Structure Page</a>."
+                    ],
+                    "context_set": ""
+            },
+            {
+                    "tag": "location",
+                    "patterns": [
+                            "where is the college located",
+                            "college is located at",
+                            "where is college",
+                            "where is college located",
+                            "address of college",
+                            "how to reach college",
+                            "college location",
+                            "college address",
+                            "wheres the college",
+                            "how can I reach college",
+                            "whats is the college address",
+                            "what is the address of college",
+                            "address",
+                            "location"
+                    ],
+                    "responses": [
+                            "Guru Nanak Dev Engineering College (GNDEC) is located at **Gill Park, Gill Road, Ludhiana, Punjab – 141006, India. It is well-connected to the city and provides a conducive environment for technical education and research."
+                    ],
+                    "context_set": ""
+            },
+            {
+                    "tag": "document",
+                    "patterns": [
+                            "document to bring",
+                            "documents needed for admission",
+                            "documents needed at the time of admission",
+                            "documents required for admission",
+                            "admission documents",
+                            "what documents do I need for admission",
+                            "documents"
+                    ],
+                    "responses": [
+                            "To take admission at Guru Nanak Dev Engineering College (GNDEC), Ludhiana, you’ll generally need the following documents:\n\n📄 Mandatory Documents:\n- 10th Marksheet & Certificate (for DOB proof)\n- 12th Marksheet & Certificate\n- JEE Main Scorecard (if applicable)\n- Domicile Certificate\n- Character Certificate\n- Migration Certificate (if from a different board/university)\n- Category Certificate (SC/ST/OBC, etc. if applicable)\n- Income Certificate (for fee concession or scholarship)\n- Medical Fitness Certificate\n- 5–6 Passport Size Photos\n- Aadhar Card\n- Counseling Allotment Letter (if admitted through PTU counseling)\n- Anti-ragging Affidavit (by student and parent)\n\n📝 If Applicable:\n- Gap Year Affidavit\n- Rural Area Certificate\n- Sports Quota Certificate"
+                    ],
+                    "context_set": ""
+            },
+            {
+                    "tag": "syllabus",
+                    "patterns": [
+                            "Syllabus for IT",
+                            "CSE syllabus",
+                            "what is the Information Technology syllabus",
+                            "what is the syllabus",
+                            "syllabus",
+                            "what is IT syllabus",
+                            "what is the syllabus of GNDEC",
+                            "gndec syllabus",
+                            "show syllabus",
+                            "where can I find the syllabus",
+                            "syllabus of IT branch",
+                            "GNDEC course syllabus",
+                            "What is the syllabus for my course",
+                            "What is the next lecture"
+                    ],
+                    "responses": [
+                            "📘 You can find the detailed syllabus for all branches and semesters on the GNDEC official website.<br><br>👉 <a href=\"https://library.gndec.ac.in/?q=node/43\" target=\"_blank\">Click here to view the syllabus</a><br><br>Navigate to 'Academics' > 'Syllabus' and select your department and semester.<br><br>Need help with a specific branch or semester? Just ask me!"
+                    ],
+                    "context_set": ""
+            },
+            {
+                    "tag": "library",
+                    "patterns": [
+                            "is there any library",
+                            "library facility",
+                            "library facilities",
+                            "do you have library",
+                            "does the college have library",
+                            "college library",
+                            "library hours",
+                            "where can I get books",
+                            "book facility",
+                            "Where is the library",
+                            "Library",
+                            "Tell me about library"
+                    ],
+                    "responses": [
+                            "📚 GNDEC has a well-equipped **Central Library** with over 1 lakh books, journals, e-resources, and digital facilities.<br><br>🕒 **Library Timings:** 9:00 AM – 8:00 PM (Monday to Friday), 9:00 AM – 5:00 PM (Saturday)<br><br>💡 It offers:<br>• Reading Halls<br>• Book Bank Facility<br>• Access to NPTEL, DELNET, and e-Journals<br>• Digital Library Section<br><br>🔗 <a href=\"https://library.gndec.ac.in/\" target=\"_blank\">Click here to explore GNDEC Library</a>"
+                    ],
+                    "context_set": ""
+            },
+            {
+                    "tag": "infrastructure",
+                    "patterns": [
+                            "how is college infrastructure",
+                            "infrastructure",
+                            "college infrastructure"
+                    ],
+                    "responses": [
+                            "GNE has a well-maintained and spacious campus with dedicated academic blocks for each department. The classrooms are decent, and labs are equipped for practical learning. The central library is well-stocked, and there’s campus-wide Wi-Fi access. Hostels are available with basic amenities, and the sports facilities include large grounds and a gym. Overall, the infrastructure supports both academics and student life quite well."
+                    ],
+                    "context_set": ""
+            },
+            {
+                    "tag": "canteen",
+                    "patterns": [
+                            "food facilities",
+                            "canteen facilities",
+                            "canteen facility",
+                            "is there any canteen",
+                            "Is there a cafeteria in college",
+                            "Does college have canteen",
+                            "Where is canteen",
+                            "where is cafeteria",
+                            "canteen",
+                            "food in college",
+                            "college mess"
+                    ],
+                    "responses": [
+                            "Yes, GNE has a few canteens and a main mess facility. The food is affordable and offers a decent variety of snacks and meals. Hygiene is generally maintained, and seating is available for students to relax and eat during breaks."
+                    ],
+                    "context_set": ""
+            },
+            {
+                    "tag": "menu",
+                    "patterns": [
+                            "food menu",
+                            "food in canteen",
+                            "What's there on the menu",
+                            "What is available in the college canteen",
+                            "What foods can we get in the college canteen"
+                    ],
+                    "responses": [
+                            "The canteen at GNE offers a variety of food items like sandwiches, burgers, samosas, snacks, and a variety of beverages. For meals, you can find rice, dal, chapati, vegetables, and sometimes special dishes on certain days. The menu is updated regularly, and prices are quite affordable for students."
+                    ],
+                    "context_set": ""
+            },
+            {
+                    "tag": "placement",
+                    "patterns": [
+                            "What is college placement",
+                            "Which companies visit the college",
+                            "What is the average package",
+                            "Companies visiting",
+                            "Placement",
+                            "Recruitment",
+                            "Companies"
+                    ],
+                    "responses": [
+                            "GNE has a strong placement record with a dedicated placement cell that helps students with training and job opportunities. Many reputed companies visit the campus for recruitment, especially in fields like IT, engineering, and business. Students are provided with pre-placement training, including resume building, mock interviews, and soft skills development, to enhance their chances of securing a job.<br><br>GNE hosts a variety of reputed companies for campus placements across different sectors. Some of the companies that visit include major players in the IT, engineering, and consulting sectors, such as TCS, Infosys, Wipro, Cognizant, IBM, and Amazon. There are also opportunities in finance, marketing, and other industries, depending on the department."
+                    ],
+                    "context_set": ""
+            },
+            {
+                    "tag": "csehod",
+                    "patterns": [
+                            "Who is the CSE HOD",
+                            "Where is the CSE HOD",
+                            "CSE HOD",
+                            "Name of CSE HOD"
+                    ],
+                    "responses": [
+                            "The Head of the Computer Science and Engineering (CSE) department at GNE is Dr. [Name]. He/She is responsible for overseeing the department's academic and administrative activities, ensuring quality education, and guiding the students in their academic pursuits."
+                    ],
+                    "context_set": ""
+            },
+            {
+                    "tag": "ithod",
+                    "patterns": [
+                            "Who is the IT HOD",
+                            "Where is the IT HOD",
+                            "IT HOD",
+                            "Name of IT HOD"
+                    ],
+                    "responses": [
+                            "The Head of the Information Technology (IT) department at GNE is Dr. Kulvinder Singh Mann. He is responsible for managing the department's academic programs, guiding faculty, and supporting students in their learning and development."
+                    ],
+                    "context_set": ""
+            },
+            {
+                    "tag": "civilhod",
+                    "patterns": [
+                            "Who is the Civil HOD",
+                            "Where is the Civil HOD",
+                            "Civil HOD",
+                            "Name of Civil HOD"
+                    ],
+                    "responses": [
+                            "The Head of the Civil Engineering (Civil) department at GNE is Dr. [Name]. He/She oversees the academic and administrative functions of the department, guiding students and faculty members toward achieving academic excellence."
+                    ],
+                    "context_set": ""
+            },
+            {
+                    "tag": "mechhod",
+                    "patterns": [
+                            "Who is the Mechanical HOD",
+                            "Where is the Mechanical HOD",
+                            "Mechanical HOD",
+                            "Name of Mechanical HOD"
+                    ],
+                    "responses": [
+                            "The Head of the Mechanical Engineering (Mechanical) department at GNE is Dr. [Name]. He/She is responsible for the academic and administrative management of the department, ensuring quality education and guiding both students and faculty."
+                    ],
+                    "context_set": ""
+            },
+            {
+                    "tag": "applied_science_hod",
+                    "patterns": [
+                            "who is the HOD of Applied Science",
+                            "Applied Science department HOD",
+                            "head of Applied Science department",
+                            "who is the Applied Science head"
+                    ],
+                    "responses": [
+                            "The Head of the Applied Science department at GNE is Dr. [Name]. He/She oversees the teaching and research activities in subjects like Physics, Chemistry, Mathematics, and other fundamental sciences, ensuring that students receive a strong foundation in these areas."
+                    ],
+                    "context_set": ""
+            },
+            {
+                    "tag": "ECEhod",
+                    "patterns": [
+                            "Who is the ECE HOD",
+                            "Where is the ECE HOD",
+                            "ECE HOD",
+                            "Name of ECE HOD"
+                    ],
+                    "responses": [
+                            "The Head of the Electronics and Communication Engineering (ECE) department at GNE is Dr. [Name]. He/She is responsible for managing the academic and administrative activities of the department, guiding faculty, and supporting students in their academic endeavors."
+                    ],
+                    "context_set": ""
+            },
+            {
+                    "tag": "EEhod",
+                    "patterns": [
+                            "Who is the EE HOD",
+                            "Where is the EE HOD",
+                            "Electrical HOD",
+                            "who is the HOD of Electrical",
+                            "Electrical department HOD",
+                            "head of Electrical department",
+                            "who is the Electrical head",
+                            "Name of EE HOD"
+                    ],
+                    "responses": [
+                            "The Head of the Electrical Engineering (Electrical) department at GNE is Dr. [Name]. He/She oversees the academic and administrative operations of the department, ensuring a high standard of education and guiding both students and faculty in their academic pursuits."
+                    ],
+                    "context_set": ""
+            },
+            {
+                    "tag": "principal",
+                    "patterns": [
+                            "What is the name of the principal",
+                            "What is the principal's name",
+                            "Principal name",
+                            "college principal",
+                            "Who is the college principal",
+                            "Where is the principal's office",
+                            "Principal",
+                            "Name of the principal"
+                    ],
+                    "responses": [
+                            "The Principal of Guru Nanak Dev Engineering College (GNE) is Dr. Sehajpal Singh. He is responsible for overseeing the overall functioning of the college, including academic, administrative, and disciplinary activities."
+                    ],
+                    "context_set": ""
+            },
+            {
+                    "tag": "sem",
+                    "patterns": [
+                            "Exam dates",
+                            "Exam schedule",
+                            "When is the semester exam",
+                            "Semester exam timetable",
+                            "Sem",
+                            "Semester",
+                            "Exam",
+                            "When is the exam",
+                            "Exam timetable",
+                            "Exam dates",
+                            "When is the semester"
+                    ],
+                    "responses": [
+                            "You can find the semester exam schedule in the Academic Calendar at <a href='https://www.gndec.ac.in/?q=node/23' target='_blank'>Academic Calendar</a>."
+                    ],
+                    "context_set": ""
+            },
+            {
+                    "tag": "admission",
+                    "patterns": [
+                            "What is the process of admission",
+                            "What is the admission process",
+                            "How to take admission in your college",
+                            "What is the process for admission",
+                            "Admission",
+                            "Admission process"
+                    ],
+                    "responses": [
+                            "The admission process at GNE follows these general steps:\n1. **Eligibility Criteria**: Ensure you meet the eligibility requirements for the desired course.\n2. **Application Form**: Fill out and submit the online application form on the official GNE website.\n3. **Entrance Exam**: For certain courses, an entrance exam or a state-level exam (like JEE for B.Tech) may be required.\n4. **Counseling**: Based on exam results and rank, you may be called for counseling, where you will choose your preferred branch.\n5. **Document Verification**: Bring all necessary documents for verification, including marksheets, identification proof, and category certificates.\n6. **Fee Payment**: Once your seat is confirmed, you will need to pay the required admission fee.\n\nFor more detailed information, you can visit the official GNE admission page."
+                    ],
+                    "context_set": ""
+            },
+            {
+                    "tag": "facilities",
+                    "patterns": [
+                            "What facilities does the college provide",
+                            "College facility",
+                            "What are the college facilities",
+                            "Facilities",
+                            "Facilities provided"
+                    ],
+                    "responses": [
+                            "GNE provides a variety of facilities to support both academic and extracurricular activities:\n\n1. **Academic Facilities**: Well-equipped classrooms, departmental laboratories, and a central library with both physical and digital resources.\n2. **Hostels**: On-campus hostels with Wi-Fi, security, and recreational areas.\n3. **Sports Facilities**: Grounds for various sports like football, basketball, cricket, and a gymnasium.\n4. **Canteen**: Multiple canteens offering affordable food with a variety of options.\n5. **Wi-Fi**: Campus-wide internet access, including in classrooms, labs, and common areas.\n6. **Transport**: College buses to cater to students traveling from nearby areas.\n7. **Medical**: Basic healthcare facilities with a medical center.\n8. **Student Clubs and Activities**: Clubs for various interests like music, drama, and technology, along with cultural and technical events.\n\nThese facilities help students in their overall development and enhance their college experience."
+                    ],
+                    "context_set": ""
+            },
+            {
+                    "tag": "college intake",
+                    "patterns": [
+                            "Maximum number of students",
+                            "Number of seats per branch",
+                            "Number of seats in each branch",
+                            "Maximum number of seats",
+                            "Maximum student intake",
+                            "What is college intake",
+                            "How many students are taken in each branch",
+                            "Seat allotment",
+                            "Seats"
+                    ],
+                    "responses": [
+                            "The intake capacity at GNE varies by department and course. For undergraduate courses like B.Tech, the intake is typically in the range of 60-120 students per department, depending on the branch. For postgraduate courses like M.Tech, the intake may be smaller, typically around 18-30 students per specialization. The exact number may change each year based on university regulations and the number of applicants. For more specific details, you can visit the <a href='https://gndec.ac.in/?q=courses' target='_blank'>official GNE courses page</a>."
+                    ],
+                    "context_set": ""
+            },
+            {
+                    "tag": "uniform",
+                    "patterns": [
+                            "Uniform",
+                            "What about the uniform",
+                            "Do we have to wear a uniform"
+                    ],
+                    "responses": [
+                            "Gndec does not have a uniform. Students are allowed to wear decent outfits that align with the college's dress standards."
+                    ],
+                    "context_set": ""
+            },
+            {
+                    "tag": "random",
+                    "patterns": [
+                            "I love you",
+                            "Will you marry me",
+                            "Do you love me"
+                    ],
+                    "responses": [
+                            "I am not programmed for this. Please ask an appropriate query."
+                    ],
+                    "context_set": ""
+            },
+            {
+                    "tag": "swear",
+                    "patterns": [
+                            "Fuck",
+                            "Bitch",
+                            "Shut up",
+                            "Hell",
+                            "Stupid",
+                            "Idiot",
+                            "Dumbass",
+                            "Asshole",
+                            "Fucker"
+                    ],
+                    "responses": [
+                            "Please use appropriate language.",
+                            "Maintaining decency would be appreciated."
+                    ],
+                    "context_set": ""
+            },
+            {
+                    "tag": "vacation",
+                    "patterns": [
+                            "Holidays",
+                            "When will the semester start",
+                            "When will the semester end",
+                            "When are the holidays",
+                            "sList of holiday",
+                            "About vacations",
+                            "About holidays",
+                            "When is vacation",
+                            "When are the holidays",
+                            "How long will the vacation be"
+                    ],
+                    "responses": [
+                            "The holiday schedule generally varies according to the academic calendar. Please refer to the <a href='https://www.gndec.ac.in/?q=node/23' target='_blank'>Academic Calendar</a> for more details."
+                    ],
+                    "context_set": ""
+            },
+            {
+                    "tag": "salutation",
+                    "patterns": [
+                            "Okk",
+                            "Okie",
+                            "Nice work",
+                            "Well done",
+                            "Good job",
+                            "Thanks for the help",
+                            "Thank You",
+                            "It's ok",
+                            "Thanks",
+                            "thank",
+                            "K",
+                            "Ok",
+                            "Okay"
+                    ],
+                    "responses": [
+                            "I'm glad I could help!",
+                            "You're welcome! Is there anything else I can assist you with?"
+                    ],
+                    "context_set": ""
+            },
+            {
+                    "tag": "task",
+                    "patterns": [
+                            "What can you do?",
+                            "What are the things you can do?",
+                            "Things you can do",
+                            "What can you do for me?",
+                            "How can you help me?",
+                            "Why should I use you?"
+                    ],
+                    "responses": [
+                            "I can answer basic to intermediate questions regarding the college.",
+                            "You can ask me any questions related to the college, and I will try to assist you.",
+                            "I'm designed to provide answers to general college queries."
+                    ],
+                    "context_set": ""
+            },
+            {
+                    "tag": "ragging",
+                    "patterns": [
+                            "Ragging",
+                            "Is ragging practice active in college?",
+                            "Does college have any anti-ragging facility?",
+                            "Are there any ragging cases?",
+                            "Is there any ragging here?",
+                            "Ragging juniors",
+                            "Ragging history",
+                            "Ragging incidents"
+                    ],
+                    "responses": [
+                            "Ragging is strictly prohibited at GNE. The college has a zero-tolerance policy towards ragging, and any student found indulging in ragging will face severe disciplinary action, including expulsion. The college ensures a safe and respectful environment for all students. If you experience or witness any form of ragging, you are encouraged to report it immediately to the authorities."
+                    ],
+                    "context_set": ""
+            },
+            {
+                    "tag": "hod",
+                    "patterns": [
+                            "HOD",
+                            "HOD name",
+                            "Who is the HOD?"
+                    ],
+                    "responses": [
+                            "The HODs differ for each department. Please be more specific, like: (HOD CSE) for Computer Science Engineering."
+                    ],
+                    "context_set": ""
+            },
+            {
+                    "tag": "facts",
+                    "patterns": [
+                            "Tell me facts about the college",
+                            "Tell me any unknown fact",
+                            "Facts",
+                            "Gndec facts"
+                    ],
+                    "responses": [
+                            "Here are some interesting facts about GNE:\n\n1. **Established in 1956**: GNDEC is one of the oldest and most prestigious engineering institutions in northern India.\n2. **Accreditations**: The college is accredited by NAAC with an 'A' grade, ensuring high educational standards.\n3. **Campus**: The college is spread over 88 acres, equipped with modern classrooms, labs, libraries, sports complexes, and recreational areas.\n4. **Diverse Courses**: GNE offers undergraduate and postgraduate courses in engineering, management, and computer applications.\n5. **Cultural and Technical Events**: The college hosts popular events like GENESIS and ATHARVA, which are platforms for cultural and technical showcases.\n6. **Strong Placement**: GNE has a strong placement record, with collaborations with national and international companies.\n\nFor more details, you can visit the official <a href='https://gndec.ac.in/?utm_source=chatgpt.com' target='_blank'>GNE website</a>."
+                    ],
+                    "context_set": ""
+            },
+            {
+                    "tag": "location_g12",
+                    "patterns": [
+                            "Where is G12?",
+                            "Location of G12?",
+                            "How can I find G12?",
+                            "G12 room location"
+                    ],
+                    "responses": [
+                            "G12 is located on the ground floor of the CSE block near the staircase."
+                    ],
+                    "context_set": ""
+            },
+            {
+                    "tag": "location_dbms_lab",
+                    "patterns": [
+                            "Where is DBMS lab?",
+                            "Location of DBMS lab",
+                            "How to find DBMS lab?",
+                            "DBMS lab room number?"
+                    ],
+                    "responses": [
+                            "The DBMS lab is located on the first floor of the CSE block, adjacent to room G11."
+                    ],
+                    "context_set": ""
+            },
+            {
+                    "tag": "location_g11",
+                    "patterns": [
+                            "Where is G11?",
+                            "Location of G11 room",
+                            "How to find G11?",
+                            "G11 room number?"
+                    ],
+                    "responses": [
+                            "Room G11 is located on the first floor of the CSE block, next to the DBMS lab."
+                    ],
+                    "context_set": ""
+            },
+            {
+                    "tag": "location_hardware_lab",
+                    "patterns": [
+                            "Where is hardware lab?",
+                            "Location of hardware lab",
+                            "How to find hardware lab?",
+                            "Hardware lab room number?"
+                    ],
+                    "responses": [
+                            "The Hardware Lab is located on the ground floor of the CSE block, in front of the main staircase."
+                    ],
+                    "context_set": ""
+            },
+            {
+                    "tag": "location_mba_block",
+                    "patterns": [
+                            "Where is the MBA block?",
+                            "Location of MBA block",
+                            "How to find MBA department?",
+                            "MBA department location?"
+                    ],
+                    "responses": [
+                            "The MBA Block at GNE College is located near the main entrance, adjacent to the Admin Block.<a href=\"https://maps.app.goo.gl/bRKPFNWye1FpL6p48\" target=\"_blank\">📍 View on Google Maps</a>"
+                    ],
+                    "context_set": ""
+            },
+            {
+                    "tag": "location_s213",
+                    "patterns": [
+                            "Where is S-213?",
+                            "Location of S213 room",
+                            "How to find room S-213?",
+                            "S-213 room number?"
+                    ],
+                    "responses": [
+                            "Room S-213 is located on the second floor of the South Block (S-Block) at GNE College."
+                    ],
+                    "context_set": ""
+            },
+            {
+                    "tag": "location_auditorium",
+                    "patterns": [
+                            "Where is the college auditorium?",
+                            "Location of auditorium",
+                            "How to reach the auditorium?",
+                            "Auditorium room location?"
+                    ],
+                    "responses": [
+                            "The college auditorium at GNE is situated near the main administrative block, opposite the civil block. It's used for seminars, events, and cultural programs.<a href=\"https://maps.app.goo.gl/A33KfGmRHwh2dYXA6\" target=\"_blank\">📍 View on Google Maps</a>"
+                    ],
+                    "context_set": ""
+            },
+            {
+                    "tag": "location_sports_complex",
+                    "patterns": [
+                            "Where is the sports complex?",
+                            "Location of sports complex",
+                            "How to reach the sports area?",
+                            "Where can I find the sports ground?"
+                    ],
+                    "responses": [
+                            "The sports complex at GNE is located near the hostel area, behind the Mechanical Block. It includes facilities for cricket, basketball, volleyball, and a gymnasium.<a href=\"https://maps.app.goo.gl/MVUm3bTWoSREwXY19\" target=\"_blank\">📍 View on Google Maps</a>"
+                    ],
+                    "context_set": ""
+            },
+            {
+                    "tag": "location_library",
+                    "patterns": [
+                            "Where is the library?",
+                            "Location of library",
+                            "How can I reach the library?",
+                            "Where is the college library?",
+                            "Library location in GNE"
+                    ],
+                    "responses": [
+                            "The library at GNE is located near the main administrative block. It is a central facility accessible to all departments and students.<a href=\"https://maps.app.goo.gl/vPd2WnWp5mwbs7MEA\" target=\"_blank\">📍 View on Google Maps</a>"
+                    ],
+                    "context_set": ""
+            },
+            {
+                    "tag": "location_academic_branch",
+                    "patterns": [
+                            "Where is academic branch?",
+                            "Academic office location",
+                            "How to find academic branch?",
+                            "Academic section",
+                            "Academic branch in college"
+                    ],
+                    "responses": [
+                            "The Academic Branch is located behind the auditorium, near the central library.<a href=\"https://maps.app.goo.gl/VgWua54YNeMEhsen9\" target=\"_blank\">📍 View on Google Maps</a>"
+                    ],
+                    "context_set": ""
+            },
+            {
+                    "tag": "location_it_department",
+                    "patterns": [
+                            "Where is IT department?",
+                            "IT block",
+                            "IT department location",
+                            "How to find IT department?",
+                            "IT block location",
+                            "Where can I find the IT department?"
+                    ],
+                    "responses": [
+                            "The Information Technology (IT) department is located near the main gate of the college. <a href=\"https://maps.app.goo.gl/BztwNV4ShTZxHhfd9\" target=\"_blank\">📍 View on Google Maps</a>"
+                    ],
+                    "context_set": ""
+            }
+    ]
+}

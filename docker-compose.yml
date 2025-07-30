@@ -1,0 +1,8 @@
+services:
+  chatbot:
+    build: .
+    ports:
+      - "8001:8000"  # Changed from 8000:8000
+    volumes:
+      - ./app:/app
+    restart: unless-stopped
