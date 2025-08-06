@@ -3,9 +3,20 @@ import cors from 'cors';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import mongoose from 'mongoose';
+import dotenv from 'dotenv';
+import authRoutes from './routes/auth.js';
+
+// Load environment variables
+dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3001;
+
+// Connect to MongoDB
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/chatbot_db')
+  .then(() => console.log('Connected to MongoDB'))
+  .catch(err => console.error('MongoDB connection error:', err));
 
 app.use(cors({
   origin: process.env.NODE_ENV === 'production' 
@@ -14,6 +25,9 @@ app.use(cors({
   credentials: true
 }));
 app.use(express.json());
+
+// Auth routes
+app.use('/api/auth', authRoutes);
 
 // Load responses
 const responses = JSON.parse(fs.readFileSync('./responses.json', 'utf-8'));
