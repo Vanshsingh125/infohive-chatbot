@@ -19,8 +19,8 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/chatbot_d
   .catch(err => console.error('MongoDB connection error:', err));
 
 app.use(cors({
-  origin: process.env.NODE_ENV === 'production' 
-    ? [process.env.FRONTEND_URL || 'https://infohive-chatbot.vercel.app'] 
+  origin: process.env.NODE_ENV === 'production'
+    ? [process.env.FRONTEND_URL || process.env.CHAT_URI]
     : ['http://localhost:3000'],
   credentials: true
 }));
@@ -35,7 +35,7 @@ const responses = JSON.parse(fs.readFileSync('./responses.json', 'utf-8'));
 // Chat API
 app.post('/api/chat', (req, res) => {
   const userMessage = req.body.message?.toLowerCase() || '';
-  
+
   // First, try to find exact matches or more specific patterns
   for (const intent of responses.intents) {
     for (const pattern of intent.patterns) {
@@ -74,7 +74,7 @@ app.post('/api/chat', (req, res) => {
       }
     }
   }
-  
+
   // Default response
   const defaultResponses = [
     "I'm not sure I understand. Could you rephrase that?",
