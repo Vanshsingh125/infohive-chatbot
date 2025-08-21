@@ -9,6 +9,13 @@ const router = express.Router();
 router.post('/signup', async (req, res) => {
   console.log("i am comming baby");
   try {
+    // Check if MongoDB is available
+    if (!process.env.MONGODB_URI) {
+      return res.status(503).json({ 
+        message: 'Database not available. Please contact administrator.' 
+      });
+    }
+
     const { username, email, password } = req.body;
 
     // Check if user already exists
@@ -34,7 +41,7 @@ router.post('/signup', async (req, res) => {
     // Create JWT token
     const token = jwt.sign(
       { userId: user._id },
-      process.env.JWT_SECRET,
+      process.env.JWT_SECRET || 'fallback-secret',
       { expiresIn: '7d' }
     );
 
@@ -56,6 +63,13 @@ router.post('/signup', async (req, res) => {
 // Login user
 router.post('/login', async (req, res) => {
   try {
+    // Check if MongoDB is available
+    if (!process.env.MONGODB_URI) {
+      return res.status(503).json({ 
+        message: 'Database not available. Please contact administrator.' 
+      });
+    }
+
     const { email, password } = req.body;
 
     // Find user by email
@@ -73,7 +87,7 @@ router.post('/login', async (req, res) => {
     // Create JWT token
     const token = jwt.sign(
       { userId: user._id },
-      process.env.JWT_SECRET,
+      process.env.JWT_SECRET || 'fallback-secret',
       { expiresIn: '7d' }
     );
 
