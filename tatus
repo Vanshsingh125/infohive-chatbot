@@ -1,5 +1,0 @@
-[33m9e7b628[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m Fix CORS configuration for Render deployment - allow localhost and all deployed URLs
-[33maa8e4a2[m Fix CORS, API URLs, React Router warnings, and add autocomplete attributes
-[33md891778[m Fix Docker deployment: Build client and server together
-[33m33cd622[m Add Docker configuration for server deployment
-[33m0a67350[m unessey files are removed
