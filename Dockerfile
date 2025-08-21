@@ -4,17 +4,26 @@ FROM node:18-alpine
 # Set working directory
 WORKDIR /app
 
-# Copy package files
-COPY server/package*.json ./
+# Copy package files for both client and server
+COPY client/package*.json ./client/
+COPY server/package*.json ./server/
 
-# Install dependencies
-RUN npm install
+# Install dependencies for both client and server
+RUN npm install --prefix ./client
+RUN npm install --prefix ./server
 
-# Copy server source code
-COPY server/ .
+# Copy source code for both client and server
+COPY client/ ./client/
+COPY server/ ./server/
+
+# Build the client
+RUN npm run build --prefix ./client
+
+# Set working directory to server
+WORKDIR /app/server
 
 # Expose port
-EXPOSE 3001
+EXPOSE 8080
 
 # Start the application
 CMD ["npm", "start"]
