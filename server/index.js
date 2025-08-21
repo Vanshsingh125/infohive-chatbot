@@ -21,15 +21,16 @@ console.log('CHAT_URI:', process.env.CHAT_URI);
 // Connect to MongoDB with better error handling
 const MONGODB_URI = process.env.MONGODB_URI;
 if (!MONGODB_URI) {
-  console.warn('MONGODB_URI environment variable is not set! Server will run without database.');
-} else {
-  mongoose.connect(MONGODB_URI)
-    .then(() => console.log('Connected to MongoDB'))
-    .catch(err => {
-      console.error('MongoDB connection error:', err);
-      // Don't exit the process, just log the error
-    });
+  console.error('MONGODB_URI environment variable is not set!');
+  process.exit(1);
 }
+
+mongoose.connect(MONGODB_URI)
+  .then(() => console.log('Connected to MongoDB'))
+  .catch(err => {
+    console.error('MongoDB connection error:', err);
+    // Don't exit the process, just log the error
+  });
 // CORS configuration - allow all origins for now to fix the issue
 app.use(cors({
   origin: true, // Allow all origins
