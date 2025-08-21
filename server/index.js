@@ -22,15 +22,9 @@ console.log('CHAT_URI:', process.env.CHAT_URI);
 mongoose.connect(process.env.MONGODB_URI)
   .then(() => console.log('Connected to MongoDB'))
   .catch(err => console.error('MongoDB connection error:', err));
-// CORS configuration - allow both localhost and deployed URLs
+// CORS configuration - allow all origins for now to fix the issue
 app.use(cors({
-  origin: [
-    'http://localhost:3000',
-    'https://infohivechatbot.onrender.com',
-    'https://infohive-chatbot.onrender.com',
-    process.env.FRONTEND_URL,
-    process.env.CHAT_URI
-  ].filter(Boolean), // Remove any undefined values
+  origin: true, // Allow all origins
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
@@ -40,6 +34,11 @@ app.use(cors({
 app.options('*', cors());
 
 app.use(express.json());
+
+// Test endpoint
+app.get('/api/test', (req, res) => {
+  res.json({ message: 'Server is working!', timestamp: new Date().toISOString() });
+});
 
 // Auth routes
 app.use('/api/auth', authRoutes);
