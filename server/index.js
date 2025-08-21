@@ -18,10 +18,19 @@ console.log('NODE_ENV:', process.env.NODE_ENV);
 console.log('FRONTEND_URL:', process.env.FRONTEND_URL);
 console.log('CHAT_URI:', process.env.CHAT_URI);
 
-// Connect to MongoDB
-mongoose.connect(process.env.MONGODB_URI)
+// Connect to MongoDB with better error handling
+const MONGODB_URI = process.env.MONGODB_URI;
+if (!MONGODB_URI) {
+  console.error('MONGODB_URI environment variable is not set!');
+  process.exit(1);
+}
+
+mongoose.connect(MONGODB_URI)
   .then(() => console.log('Connected to MongoDB'))
-  .catch(err => console.error('MongoDB connection error:', err));
+  .catch(err => {
+    console.error('MongoDB connection error:', err);
+    // Don't exit the process, just log the error
+  });
 // CORS configuration - allow all origins for now to fix the issue
 app.use(cors({
   origin: true, // Allow all origins
@@ -35,6 +44,15 @@ app.options('*', cors());
 
 app.use(express.json());
 
+// Health check endpoint
+app.get('/api/health', (req, res) => {
+  res.json({ 
+    status: 'OK', 
+    timestamp: new Date().toISOString(),
+    mongodb: mongoose.connection.readyState === 1 ? 'connected' : 'disconnected'
+  });
+});
+
 // Test endpoint
 app.get('/api/test', (req, res) => {
   res.json({ message: 'Server is working!', timestamp: new Date().toISOString() });
@@ -43,8 +61,15 @@ app.get('/api/test', (req, res) => {
 // Auth routes
 app.use('/api/auth', authRoutes);
 
-// Load responses
-const responses = JSON.parse(fs.readFileSync('./responses.json', 'utf-8'));
+// Load responses with error handling
+let responses;
+try {
+  responses = JSON.parse(fs.readFileSync('./responses.json', 'utf-8'));
+  console.log('Responses loaded successfully');
+} catch (error) {
+  console.error('Error loading responses.json:', error);
+  responses = { intents: [] }; // Fallback empty responses
+}
 
 // Chat API
 app.post('/api/chat', (req, res) => {
@@ -108,6 +133,15 @@ if (process.env.NODE_ENV === 'production') {
     res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
   });
 }
+
+// Global error handler
+app.use((err, req, res, next) => {
+  console.error('Unhandled error:', err);
+  res.status(500).json({ 
+    error: 'Internal server error',
+    message: process.env.NODE_ENV === 'development' ? err.message : 'Something went wrong'
+  });
+});
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
