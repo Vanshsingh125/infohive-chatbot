@@ -14,14 +14,13 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 // Connect to MongoDB
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/chatbot_db')
+mongoose.connect(process.env.MONGODB_URI)
   .then(() => console.log('Connected to MongoDB'))
   .catch(err => console.error('MongoDB connection error:', err));
-
 app.use(cors({
   origin: process.env.NODE_ENV === 'production'
-    ? [process.env.FRONTEND_URL || process.env.CHAT_URI]
-    : ['http://localhost:3000'],
+    ? [process.env.FRONTEND_URL || process.env.CHAT_URI || 'https://infohivechatbot.onrender.com']
+    : ['http://localhost:3000', 'https://infohivechatbot.onrender.com'],
   credentials: true
 }));
 app.use(express.json());

@@ -13,7 +13,7 @@ const SignUp = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:3001';
+  const API_URL = process.env.REACT_APP_API_URL || 'https://infohivechatbot.onrender.com';
 
   const handleChange = (e) => {
     setFormData({
@@ -105,6 +105,7 @@ const SignUp = () => {
               value={formData.email}
               onChange={handleChange}
               required
+              autoComplete="email"
             />
           </div>
 
@@ -118,6 +119,7 @@ const SignUp = () => {
               onChange={handleChange}
               required
               minLength="6"
+              autoComplete="new-password"
             />
           </div>
 
@@ -130,6 +132,7 @@ const SignUp = () => {
               value={formData.confirmPassword}
               onChange={handleChange}
               required
+              autoComplete="new-password"
             />
           </div>
 

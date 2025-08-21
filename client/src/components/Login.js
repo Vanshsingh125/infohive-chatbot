@@ -11,7 +11,7 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:3001';
+  const API_URL = process.env.REACT_APP_API_URL || 'https://infohivechatbot.onrender.com';
 
   const handleChange = (e) => {
     setFormData({
@@ -76,6 +76,7 @@ const Login = () => {
               value={formData.email}
               onChange={handleChange}
               required
+              autoComplete="email"
             />
           </div>
 
@@ -88,6 +89,7 @@ const Login = () => {
               value={formData.password}
               onChange={handleChange}
               required
+              autoComplete="current-password"
             />
           </div>
 

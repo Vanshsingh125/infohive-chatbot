@@ -10,7 +10,7 @@ const Chat = () => {
   const navigate = useNavigate();
 
   // Get API URL from environment or use localhost for development
-  const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:3001';
+  const API_URL = process.env.REACT_APP_API_URL || 'https://infohivechatbot.onrender.com';
 
   useEffect(() => {
     const storedUser = localStorage.getItem('user');
