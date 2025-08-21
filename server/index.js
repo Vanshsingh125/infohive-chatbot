@@ -13,16 +13,32 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+// Debug CORS configuration
+console.log('NODE_ENV:', process.env.NODE_ENV);
+console.log('FRONTEND_URL:', process.env.FRONTEND_URL);
+console.log('CHAT_URI:', process.env.CHAT_URI);
+
 // Connect to MongoDB
 mongoose.connect(process.env.MONGODB_URI)
   .then(() => console.log('Connected to MongoDB'))
   .catch(err => console.error('MongoDB connection error:', err));
+// CORS configuration - allow both localhost and deployed URLs
 app.use(cors({
-  origin: process.env.NODE_ENV === 'production'
-    ? [process.env.FRONTEND_URL || process.env.CHAT_URI || 'https://infohivechatbot.onrender.com']
-    : ['http://localhost:3000', 'https://infohivechatbot.onrender.com'],
-  credentials: true
+  origin: [
+    'http://localhost:3000',
+    'https://infohivechatbot.onrender.com',
+    'https://infohive-chatbot.onrender.com',
+    process.env.FRONTEND_URL,
+    process.env.CHAT_URI
+  ].filter(Boolean), // Remove any undefined values
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
+
+// Handle CORS preflight requests
+app.options('*', cors());
+
 app.use(express.json());
 
 // Auth routes
